@@ -1,0 +1,35 @@
+.visas-container {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 20px;
+    place-items: center;
+}
+
+.g2-f-visas-box {
+    width: 350px;
+    height: 350px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+}
+.g2-f-visas-box > img {
+    width: 97%;
+    height: 97%;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.Blue {
+    background: var(--blue);
+}
+.Purple {
+    background: var(--purple);
+}
+.Yellow {
+    background: var(--coral);
+}
+.Pink {
+    background: var(--pink);
+}

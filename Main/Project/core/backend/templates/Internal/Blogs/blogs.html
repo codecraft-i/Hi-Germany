@@ -1,0 +1,135 @@
+{% extends 'Home/base.html' %}
+
+{% block content %}
+    <style>
+        .content-blog-about {
+            width: 100% !important;
+            height: auto !important;
+
+            margin: 100px 0 0 0;
+        }
+        
+        header {
+            background: var(--bg-oxford-blue-2);
+        }
+        /**/
+        /**/
+
+        @media (max-width: 1000px) {
+            .content-system {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .blog-box {
+                width: 100% !important;
+            }
+            .blogs-box {
+                width: 80% !important;
+                height: auto;
+            }
+        }
+        @media (max-width: 992px) {
+            .blogs-box {
+                width: 100% !important;
+                height: auto;
+            }
+        }
+        @media (max-width: 600px) {
+            .pici-content {
+                display: grid;
+                place-items: center;
+            }
+            .pici-content > img {
+                width: 150px;
+                height: 100px !important;
+                background-size: cover;
+            }
+            .blog-details {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            .bCD-dt {
+                font-size: 1.5rem;
+            }
+            
+            .about-box {
+                width: auto;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        @media (max-width: 450px) {
+            .pici-content {
+                width: 25% !important;
+            }
+            .pici-content > img {
+                width: 100%;
+                height: 65px !important;
+                background-size: cover;
+                margin-right: 15px;
+            }
+            .blog-details {
+                padding: 0 5px 0 0 !important;
+            }
+            /* .blog-box {
+                padding: 2px 2px 2px 0;
+            } */
+        }
+    </style>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/Home/Css/style.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="/static/Home/Css/main.css">
+    <link rel="stylesheet" href="/static/Home/Css/mainN.css">
+    <div class="content-blog-about">
+        <div class="blog-image-box" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="250" style="border-radius: 20px !important;">
+            <img src="/static/Home/Assets/Images/images/blog.jpg" alt="*">
+        </div>
+        <div class="content-system">
+            <div class="blogs-box" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="200">
+                {% for blog in blogs %}
+                <div class="blog-box" style="padding: 10px 0 10px 10px;">
+                    <a href="{% url 'blog' blog.id %}" class="blog-box-path">
+                        {% for allExtraBlogData in blog.images.all %}
+                            {% if forloop.first %}
+                                <div class="pici-content"><img src="{{ allExtraBlogData.images.url }}" alt="{{ blog.title }}"></div>
+                            {% endif %}
+                        {% endfor %}
+                        <div class="blog-details">
+                            <span class="blog-title">{{ blog.title }}</span>
+                            <div class="blog-creator-details">
+                                <span class="bCD-un"><i class='bx bxs-user'></i> {{ blog.created_by }}</span>
+                                <span class="bCD-dt"><i class='bx bx-list-check' ></i> {{ blog.created_at.year }} - yil</span>
+                            </div>
+                            <p class="blog-description">{{ blog.description_f_body|slice:":105" }}{% if blog.description_f_body|length > 105 %}...{% endif %}</p>
+                            <div class="blog-tags">
+                                <div class="blog-tag">{{ blog.tags }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="about-box">
+                <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="200" class="about-text-box"><h2>{% trans 'About Us' %}</h2></div>
+                <img src="/static/Home/Assets/Images/images/khurshid.jpg" alt="*"> <!-- data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="250" -->
+                <h3 data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300">Khurshid Mirzakhidovich</h3>
+                <p data-aos="fade-left" data-aos-easing="linear" data-aos-duration="350">{% trans 'The creator by' %} <span>{% trans 'Hi Germany' %}</span> {% trans 'and ather busines.' %}</p>
+                <span data-aos="fade-left" data-aos-easing="linear" data-aos-duration="400">{% trans 'Our social media' %}</span>
+                <div class="blog-social-meadia-box" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="450">
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+                    <a href="#"><i class='bx bxl-telegram' ></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

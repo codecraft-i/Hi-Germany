@@ -1,0 +1,589 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-18 01:09+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\backend\templates\Components\delete.html:114
+msgid "Delete the Comment"
+msgstr ""
+
+#: .\backend\templates\Components\delete.html:115
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:85
+msgid "Home"
+msgstr "Home"
+
+#: .\backend\templates\Home\base.html:89
+#: .\backend\templates\Internal\Visas\visas.html:38
+msgid "Visas"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:93
+msgid "Blogs"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:97
+msgid "Usefull"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:127
+#: .\backend\templates\Home\base.html:132
+msgid "Profile"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:133
+msgid "Logout"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:135
+#: .\backend\templates\Home\signin.html:81
+#: .\backend\templates\Home\signup.html:84
+msgid "Sign in"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:136
+#: .\backend\templates\Home\signin.html:32
+#: .\backend\templates\Home\signup.html:34
+msgid "Sign up"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:154
+msgid "We have always new usefull informations."
+msgstr ""
+
+#: .\backend\templates\Home\base.html:171
+msgid "My Profile"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:175
+msgid "My Likes"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:179
+msgid "Sign Out"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:183
+msgid "Write Messages"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:187
+msgid "Account Setting"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:193
+msgid "Sign In"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:197
+msgid "Sign Up"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:207
+msgid ""
+"Copyright 2023 © Hi Germany - Personal Blog Template. Developed by Code Craft"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:243
+msgid ""
+"Here I will try to prove that the German language and coming to Germany is "
+"not difficult In shaa Allah. Please pray for our parents if you are "
+"interested."
+msgstr ""
+
+#: .\backend\templates\Home\base.html:257
+msgid "Categories"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:262
+msgid "Action"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:266
+#: .\backend\templates\Home\index.html:683
+msgid "Business"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:270
+msgid "Adventure"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:274
+#: .\backend\templates\Home\index.html:26
+msgid "Germany"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:278
+#: .\backend\templates\Home\index.html:643
+msgid "Works"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:287
+msgid "Newsletter"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:290
+msgid ""
+"Sign up to be first to receive the latest stories inspiring us, case "
+"studies, and industry news."
+msgstr ""
+
+#: .\backend\templates\Home\base.html:307
+msgid "Subscribe"
+msgstr ""
+
+#: .\backend\templates\Home\base.html:319
+msgid "Developed by"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:25
+msgid "Hey, Welcome to the official website of Hi Germany"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:26
+msgid "With us you are different"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:26
+msgid "about"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:28
+msgid "German language and coming to Germany"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:28
+msgid "is easy, believe me😉"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:30
+msgid "Get In Touch"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:160
+msgid "Hot topics"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:164
+msgid ""
+"Don't miss out on the latest news about Travel tips, Hotels review, Food "
+"guide..."
+msgstr ""
+
+#: .\backend\templates\Home\index.html:191
+msgid "But ticket"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:208
+#: .\backend\templates\Home\index.html:595
+msgid "Travel"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:225
+msgid "University"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:242
+#: .\backend\templates\Home\index.html:627
+msgid "Foods"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:259
+msgid "Health"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:308
+msgid "#University"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:310
+msgid "#Study"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:322
+msgid "About German education and studying in Germany"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:339
+#: .\backend\templates\Home\index.html:391
+#: .\backend\templates\Home\index.html:443
+#: .\backend\templates\Home\index.html:495
+#: .\backend\templates\Home\index.html:547
+msgid "Read more"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:360
+msgid "#Work"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:362
+msgid "#Profession"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:374
+msgid "About going to work in Germany and different types of jobs."
+msgstr ""
+
+#: .\backend\templates\Home\index.html:412
+#: .\backend\templates\Internal\UsefullAll\usefulls.html:105
+msgid "#Travel"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:414
+msgid "#Trip"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:426
+msgid "About a trip to Germany"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:478
+msgid "About famous places in Germany"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:530
+msgid "Germany Uzbekistan embassies and Asking for help"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:559
+msgid "Show More Posts"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:582
+msgid "Popular Tags"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:586
+msgid "Most searched keywords"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:603
+msgid "Culture"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:611
+msgid "Lifestyle"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:619
+msgid "Fashion"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:635
+msgid "Cities"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:651
+msgid "Minimal"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:659
+msgid "Interior"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:667
+msgid "Plant"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:675
+msgid "Nature"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:706
+msgid "Recent posts"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:710
+msgid "Don't miss the latest trends"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:727
+msgid "Germany Tips"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:784
+msgid "Popular Posts"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:827
+msgid "Last Comment"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:870
+msgid "Follow us on Social Media"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:872
+msgid "Usefull Posts us on Social Media"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:900
+msgid "Address"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:906
+msgid "Phone"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:912
+msgid "Email and Telegram Bot"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:918
+msgid "Send us a message"
+msgstr ""
+
+#: .\backend\templates\Home\index.html:919
+msgid ""
+"If you have any work from me or any types of quries related to my tutorial, "
+"you can send me message from here. It's my pleasure to help you."
+msgstr ""
+
+#: .\backend\templates\Home\index.html:933
+msgid "Send Now"
+msgstr ""
+
+#: .\backend\templates\Home\likes.html:51
+msgid "Blogs I like"
+msgstr ""
+
+#: .\backend\templates\Home\ourCondition.html:227
+#: .\backend\templates\Home\ourCondition.html:237
+#: .\backend\templates\Home\signin.html:136
+#: .\backend\templates\Home\signup.html:139
+msgid "Terms of Services"
+msgstr ""
+
+#: .\backend\templates\Home\ourCondition.html:228
+#: .\backend\templates\Home\ourCondition.html:242
+#: .\backend\templates\Home\signin.html:137
+#: .\backend\templates\Home\signup.html:140
+msgid "Privacy Policy"
+msgstr ""
+
+#: .\backend\templates\Home\ourCondition.html:233
+msgid "Terms & Conditions"
+msgstr ""
+
+#: .\backend\templates\Home\ourCondition.html:238
+msgid "Hi Germany © 2023 is an information campaign about Germany."
+msgstr ""
+
+#: .\backend\templates\Home\ourCondition.html:239
+msgid "All rights reserved."
+msgstr ""
+
+#: .\backend\templates\Home\ourCondition.html:243
+msgid "Hi Germany - You consent to the storage and processing of your data."
+msgstr ""
+
+#: .\backend\templates\Home\ourCondition.html:244
+msgid ""
+"Created by Hi-Germany Code Craft, as with Imzila products, the system is "
+"supported."
+msgstr ""
+
+#: .\backend\templates\Home\profile.html:56
+msgid "Back Home Page"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:30
+#: .\backend\templates\Home\signup.html:32
+msgid "Welcome Back"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:31
+#: .\backend\templates\Home\signup.html:33
+msgid "Not registred yet?"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:45
+#: .\backend\templates\Home\signin.html:94
+#: .\backend\templates\Home\signup.html:47
+#: .\backend\templates\Home\signup.html:97
+msgid "Name"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:57
+#: .\backend\templates\Home\signin.html:117
+#: .\backend\templates\Home\signup.html:59
+#: .\backend\templates\Home\signup.html:120
+#: .\backend\templates\Home\signup.html:132
+msgid "Password"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:63
+#: .\backend\templates\Home\signup.html:65
+msgid "Forgotten your password or you login datails?"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:64
+#: .\backend\templates\Home\signup.html:66
+msgid "Get help"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:64
+#: .\backend\templates\Home\signup.html:66
+msgid "signing in"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:79
+#: .\backend\templates\Home\signup.html:82
+msgid "Get Started"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:80
+#: .\backend\templates\Home\signup.html:83
+msgid "Already have an account?"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:105
+#: .\backend\templates\Home\signup.html:108
+msgid "Email"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:135
+#: .\backend\templates\Home\signup.html:138
+msgid "By signing up, I agree to the"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:136
+#: .\backend\templates\Home\signup.html:139
+msgid "and"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:153
+#: .\backend\templates\Home\signup.html:156
+msgid "Create your own courses"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:154
+#: .\backend\templates\Home\signup.html:157
+msgid "Customize as you like"
+msgstr ""
+
+#: .\backend\templates\Home\signin.html:155
+#: .\backend\templates\Home\signup.html:158
+msgid "Invite students to your class"
+msgstr ""
+
+#: .\backend\templates\Home\succes.html:112
+msgid "Sent Successfully"
+msgstr ""
+
+#: .\backend\templates\Home\succes.html:113
+msgid "We have received your request and will contact you shortly."
+msgstr ""
+
+#: .\backend\templates\Internal\Blogs\blogs.html:116
+#: .\backend\templates\Internal\MetaBlogs\blog.html:315
+msgid "About Us"
+msgstr ""
+
+#: .\backend\templates\Internal\Blogs\blogs.html:119
+#: .\backend\templates\Internal\MetaBlogs\blog.html:318
+msgid "The creator by"
+msgstr ""
+
+#: .\backend\templates\Internal\Blogs\blogs.html:119
+#: .\backend\templates\Internal\MetaBlogs\blog.html:318
+msgid "Hi Germany"
+msgstr ""
+
+#: .\backend\templates\Internal\Blogs\blogs.html:119
+#: .\backend\templates\Internal\MetaBlogs\blog.html:318
+msgid "and ather busines."
+msgstr ""
+
+#: .\backend\templates\Internal\Blogs\blogs.html:120
+#: .\backend\templates\Internal\MetaBlogs\blog.html:319
+msgid "Our social media"
+msgstr ""
+
+#: .\backend\templates\Internal\MetaBlogs\blog.html:290
+msgid "Conversation"
+msgstr ""
+
+#: .\backend\templates\Internal\MetaBlogs\blog.html:296
+msgid "Delete comment"
+msgstr ""
+
+#: .\backend\templates\Internal\MetaBlogs\blog.html:298
+msgid "ago"
+msgstr ""
+
+#: .\backend\templates\Internal\MetaBlogs\blog.html:309
+msgid "Submit"
+msgstr ""
+
+#: .\backend\templates\Internal\MetaBlogs\blog.html:317
+msgid "Khurshid Mirzakhidovich"
+msgstr ""
+
+#: .\backend\templates\Internal\UsefullAll\usefulls.html:93
+msgid "Usefull Information"
+msgstr ""
+
+#: .\backend\templates\Internal\UsefullAll\usefulls.html:94
+msgid "Lots of Information about the Germany"
+msgstr ""
+
+#: .\backend\templates\Internal\UsefullAll\usefulls.html:100
+msgid "Usefull information about Germany"
+msgstr ""
+
+#: .\backend\templates\Internal\UsefullAll\usefulls.html:101
+msgid ""
+"Germany, officially the Federal Republic of Germany, is a country in the "
+"western region of Central Europe. It is the second-most populous country in "
+"Europe ..."
+msgstr ""
+
+#: .\backend\templates\Internal\UsefullAll\usefulls.html:102
+msgid "More"
+msgstr ""
+
+#: .\backend\templates\Internal\UsefullAll\usefulls.html:104
+msgid "#Germany"
+msgstr ""
+
+#: .\backend\templates\Internal\UsefullAll\usefulls.html:106
+msgid "#Usefull"
+msgstr ""
+
+#: .\backend\templates\Internal\Visas\visas.html:39
+msgid "You can get acquainted with all our visas."
+msgstr ""
+
+#: .\core\settings.py:125
+msgid "Uzbek"
+msgstr ""
+
+#: .\core\settings.py:126
+msgid "English"
+msgstr ""
+
+#: .\core\settings.py:127
+msgid "Russian"
+msgstr ""
+
+#: .\core\settings.py:128
+msgid "German"
+msgstr ""

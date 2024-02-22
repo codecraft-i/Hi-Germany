@@ -1,0 +1,215 @@
+{% block content %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li >{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<!-- Style files -->
+<link rel="stylesheet" href="/static/Home/Css/lo_re.css">
+<!-- Boxicons -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<main>
+    <div class="exit-home-box"><a href="/"><i class='bx bx-x'></i></a></div>
+    <div class="box">
+      <div class="inner-box">
+        <div class="forms-wrap">
+          <form method="POST" autocomplete="off" class="sign-in-form">
+            {% csrf_token %}
+            <div class="logo">
+                <a href="/" id="logo-text">
+                    <span>Hi</span>
+                    <span>Germany</span>
+                </a>
+            </div>
+
+            <div class="heading">
+              <h2>{% trans 'Welcome Back' %}</h2>
+              <h6>{% trans 'Not registred yet?' %}</h6>
+              <a href="/sign-up/" class="toggle">{% trans 'Sign up' %}</a>
+            </div>
+
+            <div class="actual-form">
+              <div class="input-wrap">
+                <input
+                  type="text"
+                  minlength="4"
+                  class="input-field"
+                  name="username"
+                  autocomplete="off"
+                  required
+                />
+                <label>{% trans 'Name' %}</label>
+              </div>
+
+              <div class="input-wrap">
+                <input
+                  type="password"
+                  minlength="4"
+                  class="input-field"
+                  name="password"
+                  autocomplete="off"
+                  required
+                />
+                <label>{% trans 'Password' %}</label>
+              </div>
+
+              <input type="submit" value="Sign In" class="sign-btn" />
+
+              <p class="text">
+                {% trans 'Forgotten your password or you login datails?' %}
+                <a href="/#sendMessageBoxL">{% trans 'Get help' %}</a> {% trans 'signing in' %}
+              </p>
+            </div>
+          </form>
+
+          <form method="POST" autocomplete="off" class="sign-up-form">
+            {% csrf_token %}
+            <div class="logo">
+                <a href="/" id="logo-text">
+                    <span>Hi</span>
+                    <span>Germany</span>
+                </a>
+            </div>
+
+            <div class="heading">
+              <h2>{% trans 'Get Started' %}</h2>
+              <h6>{% trans 'Already have an account?' %}</h6>
+              <a href="#" class="toggle">{% trans 'Sign in' %}</a>
+            </div>
+
+            <div class="actual-form">
+              <div class="input-wrap">
+                <input
+                  type="text"
+                  minlength="4"
+                  class="input-field"
+                  name="username"
+                  autocomplete="off"
+                  required
+                />
+                <label>{% trans 'Name' %}</label>
+              </div>
+
+              <div class="input-wrap">
+                <input
+                  type="email"
+                  class="input-field"
+                  name="email"
+                  autocomplete="off"
+                  required
+                />
+                <label>{% trans 'Email' %}</label>
+              </div>
+
+              <div class="input-wrap">
+                <input
+                  type="password"
+                  minlength="4"
+                  class="input-field"
+                  name="password1"
+                  autocomplete="off"
+                  required
+                />
+                <label>{% trans 'Password' %}</label>
+              </div>
+
+              <div class="input-wrap">
+                <input
+                  type="password"
+                  minlength="4"
+                  class="input-field"
+                  name="password2"
+                  autocomplete="off"
+                  required
+                />
+                <label>{% trans Password %}</label>
+              </div>
+
+              <input type="submit" value="Sign Up" class="sign-btn" />
+
+              <p class="text">
+                {% trans 'By signing up, I agree to the' %}
+                <a href="/termsof_services_privacy_policy/">{% trans 'Terms of Services' %}</a> {% trans 'and' %}
+                <a href="/termsof_services_privacy_policy/">{% trans 'Privacy Policy' %}</a>
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div class="carousel">
+          <div class="images-wrapper">
+            <img src="/static/Home/Assets/Images/InternalAssets/image1.png" class="image img-1 show" alt="" />
+            <img src="/static/Home/Assets/Images/InternalAssets/image2.png" class="image img-2" alt="" />
+            <img src="/static/Home/Assets/Images/InternalAssets/image3.png" class="image img-3" alt="" />
+          </div>
+
+          <div class="text-slider">
+            <div class="text-wrap">
+              <div class="text-group">
+                <h2>{% trans 'Create your own courses' %}</h2>
+                <h2>{% trans 'Customize as you like' %}</h2>
+                <h2>{% trans 'Invite students to your class' %}</h2>
+              </div>
+            </div>
+
+            <div class="bullets">
+              <span class="active" data-value="1"></span>
+              <span data-value="2"></span>
+              <span data-value="3"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<!-- JavaScript Files -->
+<script>
+    // Login, Register JS
+
+    const inputs = document.querySelectorAll(".input-field");
+    const toggle_btn = document.querySelectorAll(".toggle");
+    const main = document.querySelector("main");
+    const bullets = document.querySelectorAll(".bullets span");
+    const images = document.querySelectorAll(".image");
+
+    inputs.forEach((inp) => {
+    inp.addEventListener("focus", () => {
+        inp.classList.add("active");
+    });
+    inp.addEventListener("blur", () => {
+        if (inp.value != "") return;
+        inp.classList.remove("active");
+    });
+    });
+
+    toggle_btn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        main.classList.toggle("sign-up-mode");
+    });
+    });
+
+    function moveSlider() {
+    let index = this.dataset.value;
+
+    let currentImage = document.querySelector(`.img-${index}`);
+    images.forEach((img) => img.classList.remove("show"));
+    currentImage.classList.add("show");
+
+    const textSlider = document.querySelector(".text-group");
+    textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
+
+    bullets.forEach((bull) => bull.classList.remove("active"));
+    this.classList.add("active");
+    }
+
+    bullets.forEach((bullet) => {
+    bullet.addEventListener("click", moveSlider);
+    });
+</script>
+
+{% endblock content %}

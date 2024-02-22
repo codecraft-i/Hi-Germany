@@ -1,0 +1,133 @@
+{% extends 'Home/base.html' %}
+<title>{% block title %} The most Usefull information {% endblock %}</title>
+
+{% block content %}
+
+<style>
+    header {
+        background: var(--bg-oxford-blue-2) !important;
+    }
+    .usefull_contents {
+        margin-top: 100px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .superW-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .metaUData-box {
+        width: 100%;
+        height: 350px;
+        background: none;
+        margin: 10px 0;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .met1 {
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+    }
+    .met1 > img {
+        width: auto;
+        height: 300px;
+        background-size: cover;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 5px;
+        border: 5px solid var(--blue);
+    }
+    .met2 {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+    }
+    .met2 > span:nth-child(1) {
+        font-size: 2.8rem;
+    }
+    .met2 > p {
+        margin: 10px 0;
+    }
+    .met2 > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .met2 > div > span {
+        color: var(--blue);
+        margin: 0 5px;
+    }
+
+    .met2 > .moreButton {
+        padding: 5px 10px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, var(--pink), var(--blue));
+        color: var(--white);
+        margin: 10px 0;
+    }
+    @media (max-width: 992px) {
+        .u_beFroBoxFUPic {
+            transform: translateX(400px) !important;
+            transform: translateY(35px) !important;
+        }
+    }
+</style>
+
+<link rel="stylesheet" href="/static/Home/Css/usefull.css">
+
+<div class="usefull_contents">
+    <div class="m5-if1-title-box">
+        <span data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="400" style="font-size: 3rem !important;">{% trans 'Usefull Information' %}</span>
+        <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500" style="font-size: 2rem !important;">{% trans 'Lots of Information about the Germany' %}</p>
+    </div>
+    <div class="metaUData-box">
+        <a href="/usefull/1/" class="metaUData-box">
+            <div class="met1"><img src="/static/Home/Assets/ProImages/inImages/ger-imTh.jpg" alt=""></div>
+            <div class="met2">
+                <span>{% trans 'Usefull information about Germany' %}</span>
+                <p>{% trans 'Germany, officially the Federal Republic of Germany, is a country in the western region of Central Europe. It is the second-most populous country in Europe ...' %}</p>
+                <span class="moreButton">{% trans 'More' %}</span>
+                <div>
+                    <span>{% trans '#Germany' %}</span>
+                    <span>{% trans '#Travel' %}</span>
+                    <span>{% trans '#Usefull' %}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="superW-container">
+        <div class="u_products-container" data-aos="fade-down-left" data-aos-easing="linear" data-aos-duration="650">
+            {% for usefull in usefulls %}
+            <div class="u_picFUPic">
+                <!-- <a href="{% url 'usefull' usefull.id %}"> -->
+                    {% for m in usefull.images.all %}
+                        {% if forloop.first %}
+                            <img class="u_picFUBPic" src="{{ m.images.url }}" alt="{{ usefull.title }}">
+                        {% endif %}
+                    {% endfor %}
+                <!-- </a> -->
+                <div class="u_beFroBoxFUPic" style="padding: 0 5px;">
+                    <span>{{ usefull.title|slice:":15" }}{% if usefull.title|length > 25 %}...{% endif %}</span>
+                    <p>{{ usefull.description_f_body|slice:":105" }}{% if usefull.description_f_body|length > 25 %}...{% endif %}</p>
+                    <a href="{% url 'usefull' usefull.id %}">More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

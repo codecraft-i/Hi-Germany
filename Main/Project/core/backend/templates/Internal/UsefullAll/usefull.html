@@ -1,0 +1,352 @@
+{% extends 'Home/base.html' %}
+
+{% block content %}
+    <style>
+        header {
+            background: var(--bg-oxford-blue-2) !important;
+        }
+        .dDataBlogsBox {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* align-items: center; */
+            margin: 100px 0 0 0 !important;
+        }
+
+        .blogDetails-container {
+            width: 100%;
+            height: 100%;
+            background: none;
+            margin: 0 35px 0 0;
+        }
+        .blogDImages {
+            position: relative;
+            width: 100%;
+            height: auto;
+            /* max-height: 300px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .blogDImages > img {
+            width: 650px;
+            border-radius: 20px;
+        }
+        .blogDName {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blogDName > section {
+            width: 70%;
+            height: auto;
+            background: var(--border-prussian-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 15px;
+            padding: 10px 10px;
+            transform: translateY(-25px);
+            color: var(--text-alice-blue);
+        }
+        .blogDDescriptionBox {
+            width: 100%;
+            height: auto;
+            display: grid;
+            place-items: center;
+        }
+        .blogDDescriptionBox > section {
+            width: 80%;
+            height: auto;
+            display: grid;
+            place-items: center;
+        }
+        .blogDDescriptionBox > section > p {
+            font-weight: 500;
+            font-size: 1.7rem;
+            /* text-align: center; */
+        }
+
+        @media (max-width: 1140px) {
+            .about-box {
+                display: none;
+            }
+        }
+
+        @media (max-width: 740px) {
+            .blogDImages > img {
+                width: 500px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .blogDImages > img {
+                width: 400px;
+            }
+            .blogDName > section {
+                transform: scale(0.8) translateY(-20px);
+            }
+        }
+
+        .backPage {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 500;
+            padding: 15px 0;
+            transform: translateX(-10px);
+            transition: all .25s ease;
+        }
+        .backPage > i {
+            font-size: 2rem;
+        }
+        .backPage:hover {
+            color: var(--text-carolina-blue);
+        }
+
+        /**//**/
+
+        .componentBlogBox {
+            position: fixed;
+            left: 10px;
+            top: 200px !important;
+            width: 55px;
+            height: 200px;
+            border-radius: 15px;
+            background: var(--border-prussian-blue);
+            box-shadow: var(--shadow-1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000 !important;
+        }
+        .sLS {
+            position: relative;
+            font-size: 2.25rem;
+            padding: 8px;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            /* color: var(--bg-carolina-blue) !important; */
+            border-radius: 50%;
+            color: var(--text-alice-blue);
+
+            transition: all .35s ease;
+        }
+        .sLS:hover {
+            background: var(--coral);
+        }
+        
+
+        .blogTagAndAddD-box {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            margin-top: 35px;
+        }
+        .blogTagAndAddD-box > span:nth-child(1) {
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, var(--blue), var(--main-color));
+            color: #fff;
+        }
+        .blogTagAndAddD-box > span:nth-child(2) {
+            background: -webkit-linear-gradient(var(--blue), var(--main-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        @media (max-width: 450px) {
+            .blogDImages > img {
+                transform: scale(0.9);
+            }
+            .componentBlogBox {
+                position: relative !important;
+                position: fixed !important;
+                transform: scale(0.8);
+                left: -40px;
+                transition: all .35s ease;
+            }
+            .componentBlogBox::before {
+                content: '>';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                right: -20px;
+                padding: 0 10px 0 0;
+                border-radius: 50%;
+                color: #fff;
+                background: var(--border-prussian-blue);
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                cursor: pointer;
+
+            }
+        }
+
+        .componentBlogBox.componentBlogBoxActive {
+            left: 10px;
+        }
+        
+        .componentBlogBox {
+            height: 80px !important;
+        }
+
+        .eLinkBox {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px 0;
+            /* transition: all .1s ease; */
+        }
+        .eLinkBox > i {
+            font-size: 2.5rem;
+            margin-right: 5px;
+            color: var(--blue);
+            transition: all .35s ease;
+        }
+        .eLinkBox > a {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--blue);
+        }
+        .eLinkBox:hover > .eLinkContent {
+            color: var(--coral) !important;
+        }
+        #saveLink {
+            top: 25px !important;
+        }
+    </style>
+
+    <div class="componentBlogBox">  
+        <button class="sLS sLS1" id="copyButton"><i class='bx bx-share'></i></button>
+        <p id="saveLink"></p>
+    </div>
+
+    <div class="dDataBlogsBox" style="position: relative;">
+        <div style="padding: 0 0 0 20px;" class="blogDetails-container">
+            <a href="/usefulls/" class="backPage"><i class='bx bxs-chevron-left'></i> Back Page</a> <!-- {{ request.META.HTTP_REFERER }} -->
+
+                <div class="blogDImages">
+                    <img src="{{ usefull.photo.url }}" alt="{{ usefull.title }}">
+                </div>
+                
+                <div class="blogDName">
+                    <section>
+                        <h1>{{ usefull.title }}</h1>
+                    </section>
+                </div>
+    
+                <div class="blogDDescriptionBox">
+                    <section style="margin: 10px 0 25px 0 !important;">
+                        <p>{{ usefull.description_f_body }}</p>
+                    </section>
+                </div>
+                
+                <!-- ExtraBlog uchun ma'lumotlar -->
+                {% for extra_usefull_data in extra_usefull %}
+                    <div class="blogDImages">
+                        <img src="{{ extra_usefull_data.images.url }}" alt="{{ extra_usefull_data.description }}">
+                    </div>
+                
+                    <div class="blogDDescriptionBox">
+                        <section style="margin: 25px 0 25px 0 !important;">
+                            <p>{{ extra_usefull_data.description }}</p>
+                        </section>
+                    </div>
+                
+                    {% if extra_usefull_data.link_name and extra_usefull_data.link_address %}
+                        <span class="eLinkBox">
+                            <i class='bx bx-link' ></i>
+                            <a href="{{ extra_usefull_data.link_address }}" target="_blank" class="eLinkContent">{{ extra_usefull_data.link_name }}</a>
+                        </span>
+                    {% endif %}
+                {% endfor %}
+            
+
+            <div class="blogTagAndAddD-box">
+                <span><a href="/{{ usefulls.tags }}">#{{ usefulls.tags }}</a></span>
+                <span>{{ usefulls.created_at.date }}</span>
+            </div>
+
+            <div class="comment-wrapper" style="margin-top: 40px;">
+                <h3>Conversation</h3>
+                <hr style="margin: 10px 0;">
+
+                {% for message in usefull_messages %}
+                    <div class="commentBody">
+                        {% if request.user == message.user %}
+                        <a class="deleteCom" href="{% url 'delete-comment' message.id %}">Delete comment</a>
+                        {% endif %}
+                        <small style="color: var(--text-wild-blue-yonder);">@{{message.user}} -|- {{ message.created_at|timesince }} ago <br></small>
+                        <p style="color: var(--text-columbia-blue); margin-top: 5px;">{{ message.body }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if request.user.is_authenticated %}
+            <div class="comment-form">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input style="background: var(--text-columbia-blue); padding: 12.5px; border-radius: 10px; margin-top: 20px; color: #000;" type="text" name="body" placeholder="Write you message here..." />
+                    <button style="margin: 15px 0 15px 0; background: var(--gradient-1); color: var(--text-alice-blue); padding: 8px 15px; border-radius: 10px;" type="submit">Submit</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        let componentBlogBox = document.querySelector('.componentBlogBox');
+
+        componentBlogBox.addEventListener('click', () => {
+        componentBlogBox.classList.toggle('componentBlogBoxActive');
+        })
+    </script>
+
+    <script>
+        document.getElementById('copyButton').addEventListener('click', function() {
+            // Matn
+            var textToCopy = 'hi-germany.uz/usefull/{{ usefulls.id }}/';
+            // var textToCopy = 'localhost:8000/blog/{{ blog.id }}/';
+
+            // Matnni tanlangan elementga qo'shish
+            var textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+
+            // Matnni tanlangan elementni tanlash
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // Safari uchun
+
+            // Matnni nusxalash
+            document.execCommand('copy');
+
+            // Tanlangan elementni o'chirish
+            document.body.removeChild(textarea);
+
+            // Foydalanuvchiga xabar berish
+            // alert('Matn nusxalandi: ' + textToCopy);
+            document.querySelector('#saveLink').innerHTML = 'Saved';
+
+            setTimeout(function() {
+                document.querySelector('#saveLink').innerHTML = '';
+            }, 2000);
+        });
+    </script>
+
+    
+    
+{% endblock %}

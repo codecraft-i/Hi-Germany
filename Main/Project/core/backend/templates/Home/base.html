@@ -1,0 +1,711 @@
+{% load i18n %}
+
+
+<!DOCTYPE html>
+{% get_current_language as current_language %}
+<html lang="{{ current_language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Hi Germany {% endblock %}</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/Home/Css/style.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="/static/Home/Css/main.css">
+    <link rel="stylesheet" href="/static/Home/Css/mainN.css">
+    <!-- Google FOnts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/static/Home/Assets/Images/PublicImages/logo.png" type="image/x-icon">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Slick JS -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Typed JS -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- AOS JS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+      .navbar.active > .navbar-list > li > .dropdown {
+            width: 100% !important;
+            display: flex;
+            justify-content: flex-end;
+            transform: scale(1.1);
+            margin: 0 10px 10px 0 !important;
+      }
+      .navbar.active > .navbar-list > li > .dropdown > .dropdown-btn {
+          margin: 0 20px 0 0 !important;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block header %}
+        <header class="header" data-header>
+            <div class="container">
+        
+              <a href="#" class="logo">
+                <div class="logo-box">
+                  <a href="/" id="logo-text">
+                      <span>Hi</span>
+                      <span>Germany</span>
+                  </a>
+                </div>
+              </a>
+        
+              <nav class="navbar" data-navbar>
+        
+                <div class="navbar-top">
+                  <a href="#" class="logo">
+                    <div class="logo-box logoS2">
+                      <a href="/" id="logo-text">
+                          <span>Hi</span>
+                          <span>Germany</span>
+                      </a>
+                    </div>
+                  </a>
+        
+                  <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                  </button>
+                </div>
+        
+                <ul class="navbar-list">
+        
+                  <li>
+                    <a href="{% url 'Home' %}" class="navbar-link hover-1 {% if request.path == '/' %}active{% endif %}" data-nav-toggler>{% trans 'Home' %}</a>
+                  </li>
+        
+                  <li>
+                    <a href="{% url 'visas' %}" class="navbar-link hover-1" data-nav-toggler>{% trans 'Visas' %}</a>
+                  </li>
+        
+                  <li>
+                    <a href="{% url 'blogs' %}" class="navbar-link hover-1" data-nav-toggler>{% trans 'Blogs' %}</a>
+                  </li>
+        
+                  <li>
+                    <a href="{% url 'usefulls' %}" class="navbar-link hover-1" data-nav-toggler>{% trans 'Usefull' %}</a>
+                  </li>
+
+                  <li>
+                    <div class="dropdown" style="margin-top: 10px !important;">
+                            <button class="dropdown-btn" onclick="toggleDropdown()"><img class="selected_languageIcon" id="selected_languageIcon" src="" alt="*"> <span id="language_name"></span></button>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="/uz/" onclick="selectOption('O`zbek', '/static/Home/Assets/Images/images/uz.png')">
+                                    <img class="selected_languageIcon" src="/static/Home/Assets/Images/images/uz.png" alt="O`zbek"> O`zbek
+                                </a>
+                                <a href="/ru/" onclick="selectOption('Русский', '/static/Home/Assets/Images/images/ru.png')">
+                                    <img class="selected_languageIcon" src="/static/Home/Assets/Images/images/ru.png" alt="Русский"> Русский
+                                </a>
+                                <a href="/de/" onclick="selectOption('German', '/static/Home/Assets/Images/images/de.png')">
+                                    <img class="selected_languageIcon" src="/static/Home/Assets/Images/images/de.png" alt="German"> German
+                                </a>
+                                <a href="/en/" onclick="selectOption('English', '/static/Home/Assets/Images/images/en.webp')">
+                                    <img class="selected_languageIcon" src="/static/Home/Assets/Images/images/en.webp" alt="English"> English
+                                </a>
+                            </div>
+                        </div>
+                  </li>
+
+                  <li>
+                    <div class="system-get" style="margin-top: 1px !important;">
+                        <div class="front-use">
+                            <i class='bx bxs-user-circle' style="font-size: 2.2rem !important;"></i>
+                            {% if request.user.is_authenticated %}
+                            <span style="font-size: 1.5rem !important; font-weight: 600;">{{ request.user.username }}</span>
+                            {% else %}
+                            <span style="font-size: 1.5rem !important; font-weight: 600;">{% trans 'Profile' %}</span>
+                            {% endif %}
+                        </div>
+                        <div class="getSysSel-box">
+                            {% if request.user.is_authenticated %}
+                            <a href="/profile/" style="font-size: 1.32rem !important;" class="userProfile"><i class='bx bxs-user-circle'></i> {% trans 'Profile' %}</a>
+                            <a href="/logout/" style="font-size: 1.32rem !important;" class="sign_op logout"><i class='bx bx-log-out'></i> {% trans 'Logout' %}</a>
+                            {% else %}
+                            <a href="/sign-in/" style="font-size: 1.32rem !important;" class="sign_op"><i class='bx bxs-log-in'></i> {% trans 'Sign in' %}</a>
+                            <a href="/sign-up/" style="font-size: 1.32rem !important;" class="sign_op sign_up"><i class='bx bxs-user-detail'></i> {% trans 'Sign up' %}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                  </li>
+        
+                </ul>
+        
+                <div class="navbar-bottom">
+                {% if request.user.is_authenticated %}
+        
+                  <div class="profile-card">
+                    <img src="/static/Home/Assets/Images/GermanAssets/defaultUserPhoto.png" width="48" height="48" alt="Steven" class="profile-banner">
+        
+                    <div>
+                      <p class="card-title"><a href="/profile/">{{ request.user.username }}</a></p>
+        
+                      <p class="card-subtitle">
+                        {% trans 'We have always new usefull informations.' %}
+                      </p>
+                    </div>
+                  </div>
+        
+                  <ul class="link-list">
+                    {% else %}
+
+                    <!-- <li>
+                      <a href="#" class="navbar-bottom-link hover-1">Profile</a>
+                    </li> -->
+
+                    {% endif %}
+
+                    {% if request.user.is_authenticated %}
+
+                    <li>
+                      <a href="/profile/#partProfileAddL" class="navbar-bottom-link hover-1">{% trans 'My Profile' %}</a>
+                    </li>
+
+                    <li>
+                        <a href="/likes/" class="navbar-bottom-link hover-1">{% trans 'My Likes' %}</a>
+                    </li>
+
+                    <li>
+                        <a href="/logout/" class="navbar-bottom-link hover-1">{% trans 'Sign Out' %}</a>
+                    </li>
+        
+                    <li>
+                      <a href="/#sendMessageBoxL" class="navbar-bottom-link hover-1">{% trans 'Write Messages' %}</a>
+                    </li>
+        
+                    <li>
+                      <a href="/profile/#editSet" class="navbar-bottom-link hover-1">{% trans 'Account Setting' %}</a>
+                    </li>
+
+                    {% else %}
+
+                    <li>
+                      <a href="/sign-in/" class="navbar-bottom-link hover-1">{% trans 'Sign In' %}</a>
+                    </li>
+        
+                    <li>
+                      <a href="/sign-up/" class="navbar-bottom-link hover-1">{% trans 'Sign Up' %}</a>
+                    </li>
+
+                    {% endif %}
+        
+                  </ul>
+        
+                </div>
+        
+                <p class="copyright-text">
+                  {% trans 'Copyright 2023 © Hi Germany - Personal Blog Template. Developed by Code Craft' %}
+                </p>
+        
+              </nav>
+        
+              <a href="https://t.me/hi_Germany" target="_blank" class="btn btn-primary">Telegram</a>
+        
+              <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+              </button>
+        
+            </div>
+          </header>
+
+            {% block content %}
+            {% endblock content %}
+
+        <footer>
+            <div class="container">
+        
+              <div class="card footer">
+        
+                <div class="section footer-top">
+        
+                  <div class="footer-brand">
+        
+                    <a href="#" class="logo">
+                      <div class="logo-box logoS2">
+                        <a href="/" id="logo-text">
+                            <span>Hi</span>
+                            <span>Germany</span>
+                        </a>
+                      </div>
+                    </a>
+        
+                    <p class="footer-text">
+                      {% trans 'Here I will try to prove that the German language and coming to Germany is not difficult In shaa Allah. Please pray for our parents if you are interested.' %}
+                    </p>
+        
+                    <p class="footer-list-title">Address</p>
+        
+                    <address class="footer-text address">
+                      Uzbekistan <br>
+                      Germany
+                    </address>
+        
+                  </div>
+        
+                  <div class="footer-list">
+        
+                    <p class="footer-list-title">{% trans 'Categories' %}</p>
+        
+                    <ul>
+        
+                      <li>
+                        <a href="#" class="footer-link hover-2">{% trans 'Action' %}</a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="footer-link hover-2">{% trans 'Business' %}</a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="footer-link hover-2">{% trans 'Adventure' %}</a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="footer-link hover-2">{% trans 'Germany' %}</a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="footer-link hover-2">{% trans 'Works' %}</a>
+                      </li>
+        
+                    </ul>
+        
+                  </div>
+        
+                  <div class="footer-list">
+        
+                    <p class="footer-list-title">{% trans 'Newsletter' %}</p>
+        
+                    <p class="footer-text">
+                      {% trans 'Sign up to be first to receive the latest stories inspiring us, case studies, and industry news.' %}
+                    </p>
+        
+                    <form method="post" id="subscribeForm" class="subMessHForm" action="{% url 'Home' %}">
+                      {% csrf_token %}
+                      <div class="input-wrapper">
+                        <input type="text" name="name" placeholder="Your name" required class="input-field" autocomplete="off">
+          
+                        <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                      </div>
+          
+                      <div class="input-wrapper">
+                        <input type="email" name="body" placeholder="Emaill address" required class="input-field"
+                          autocomplete="off">
+          
+                        <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                      </div>
+
+                      <button type="submit" id="submitBtn">
+                        <a href="javascript:void(0)" class="btn btn-primary">
+                          <span class="span">{% trans 'Subscribe' %}</span>
+            
+                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
+                      </button>
+
+                    </form>
+        
+                  </div>
+        
+                </div>
+        
+                <div class="footer-bottom">
+        
+                  <p class="copyright">
+                    &copy; {% trans 'Developed by' %} <a href="https://t.me/yanhock" target="_blank" class="copyright-link">Code Craft</a>
+                  </p>
+        
+                  <ul class="social-list">
+        
+                    <li>
+                      <a href="https://t.me/hi_Germany" target="_blank" class="social-link">
+                        <i class='bx bxl-telegram'></i>
+        
+                        <span class="span">Telegram</span>
+                      </a>
+                    </li>
+        
+                    <li>
+                      <a href="https://t.me/germanuzbot" target="_blank" class="social-link">
+                        <i class='bx bxs-bot'></i>
+        
+                        <span class="span">Telegram Bot</span>
+                      </a>
+                    </li>
+        
+                    <li>
+                      <a href="https://www.instagram.com/xvrsh1d_?igsh=MWx0bDdwMDB2cjFzcg%3D%3D&utm_source=qr" target="_blank" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+        
+                        <span class="span">Instagram</span>
+                      </a>
+                    </li>
+        
+                  </ul>
+        
+                </div>
+        
+              </div>
+        
+            </div>
+          </footer>
+
+          <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+            <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
+          </a>
+
+          <!--  -->
+          <!--  -->
+
+          <style>
+            .mainSucBox {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100vh;
+              background: rgba(0, 0, 0, 0.7) !important;
+              z-index: 2000;
+            }
+            .mainSucBoxNoneActive {
+              display: none !important;
+              pointer-events: none !important;
+              z-index: 0 !important;
+            }
+            .buttonDC {
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            padding: 14px 22px;
+            border: none;
+            background: var(--gradient-1);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all .25s ease;
+            }
+            .buttonDC:hover {
+            background: var(--gradient-2);
+            }
+            .buttonDC.show-modal,
+            .modal-box {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            background: var(--text-alice-blue);
+            }
+            section.activeSuccBox .show-modal {
+            display: none;
+            }
+            .overlay {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            /* background: rgba(0, 0, 0, 0.3); */
+            opacity: 0;
+            pointer-events: none;
+            }
+            section.activeSuccBox .overlay {
+            opacity: 1;
+            pointer-events: auto;
+            }
+            .modal-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 380px;
+            width: 100%;
+            padding: 30px 20px;
+            border-radius: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%) scale(1.2);
+            }
+            section.activeSuccBox .modal-box {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+            }
+            .modal-box i {
+            font-size: 70px;
+            color: var(--text-carolina-blue);
+            }
+            .modal-box h2 {
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: 500;
+            color: #333;
+            }
+            .modal-box h3 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #333;
+            text-align: center;
+            }
+            .modal-box .buttons {
+            margin-top: 25px;
+            }
+            .modal-box button {
+            font-size: 14px;
+            padding: 6px 12px;
+            margin: 0 10px;
+            }
+        
+            section {
+                width: 100%;
+                height: 100%;
+            }
+        
+            .content-blog-about {
+                width: 100% !important;
+                height: auto !important;
+        
+                margin: 100px 0 0 0;
+            }
+                
+            header {
+                background: var(--bg-oxford-blue-2);
+            }
+        </style>
+
+        <div class="mainSucBox mainSucBoxNoneActive">
+          <section class="activeSuccBox">
+            <button class="show-modal">Show Modal</button>
+            <span class="overlay"></span>
+            <div class="modal-box">
+                <i class="fa-regular fa-circle-check"></i>
+                <h2 style="text-align: center;">{% trans 'Sent Successfully' %}</h2>
+                <h3>{% trans 'We have received your request and will contact you shortly.' %}</h3> <!-- "{{ object }} ?" -->
+                <div style="width: 100%; height: auto; display: flex; justify-content: center; align-items: center;">
+                    <div class="buttons">
+                        <button class="buttonDC" style="padding-top: 10px; padding-bottom: 10px;"><a href="/" id="redirectLink" style="text-decoration: none; color: #fff; display: flex; justify-content: center; align-items: center;">Go back</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+            
+        {% endblock header %}
+    </div>
+    <!-- <script src="/static/Home/JS/main.js"></script> -->
+    <script src="/static/Home/JS/index.js"></script>
+    <!-- Slick JS -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 1000,
+                // dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: '<i class="fas fa-chevron-left slick-prev"></i>',
+                nextArrow: '<i class="fas fa-chevron-right slick-next"></i>'
+            });
+        });
+    </script>
+
+    <script>
+        var langCode = document.documentElement.lang;
+
+        var transStrings = {
+          'en': [
+                "Information",
+                "Education",
+                "Travel",
+                "And many others"
+            ],
+          'uz': [
+                "Ma'lumotlar",
+                "Ta'lim",
+                "Sayohat",
+                "Va boshqalar"
+            ],
+          'ru': [
+                "Информация",
+                "Образование",
+                "Путешествовать",
+                "И многие другие"
+            ],
+          'de': [
+                "Information",
+                "Ausbildung",
+                "Reisen",
+                "Und viele andere"
+            ],
+        };
+
+        var options = {
+        strings: transStrings[langCode],
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 1000,
+        startDelay: 500,
+        loop: true,
+        };
+        var typed = new Typed("#typed-output", options);
+    </script>
+
+    <!-- AOS JS -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+      let dropdownBtn = document.querySelector(".dropdown-btn");
+      let dropdownContent = document.querySelector(".dropdown-content");
+
+      dropdownBtn.addEventListener("click", () => {
+        dropdownContent.classList.toggle("show");
+      })
+
+      var currentPath = window.location.pathname;
+
+      let uzFlag = "/static/Home/Assets/Images/images/uz.png";
+      let ruFlag = "/static/Home/Assets/Images/images/ru.png";
+      let deFlag = "/static/Home/Assets/Images/images/de.png";
+      let enFlag = "/static/Home/Assets/Images/images/en.webp";
+
+      let uzLan = "O`zbek";
+      let ruLan = "Русский";
+      let deLan = "German";
+      let enLan = "English";
+
+      let selected_languageIcon = document.getElementById("selected_languageIcon");
+      let language_name = document.getElementById("language_name");
+
+      if (window.location.pathname === '/uz/' || currentPath.startsWith('/uz/')) {
+        selected_languageIcon.src = uzFlag;
+        language_name.innerHTML = uzLan;
+      } else if (window.location.pathname === '/ru/' || currentPath.startsWith('/ru/')) {
+        selected_languageIcon.src = ruFlag;
+        language_name.innerHTML = ruLan;
+      } else if (window.location.pathname === '/de/' || currentPath.startsWith('/de/')) {
+        selected_languageIcon.src = deFlag;
+        language_name.innerHTML = deLan;
+      } else if (window.location.pathname === '/en/' || currentPath.startsWith('/en/')) {
+        selected_languageIcon.src = enFlag;
+        language_name.innerHTML = enLan;
+      } else {
+        // let globalError = "This is Selected Language Error";
+        console.log("This is Select Language Error");
+      }
+    </script>
+
+    <script>
+      // Introduction Image Carausel JS
+
+      let activeIndex = 0;
+
+      const groups = document.getElementsByClassName("card-group");
+
+      const handleLoveClick = () => {
+        const nextIndex = activeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
+        
+        const currentGroup = document.querySelector(`[data-index="${activeIndex}"]`),
+              nextGroup = document.querySelector(`[data-index="${nextIndex}"]`);
+              
+        currentGroup.dataset.status = "after";
+        
+        nextGroup.dataset.status = "becoming-active-from-before";
+        
+        setTimeout(() => {
+          nextGroup.dataset.status = "active";
+          activeIndex = nextIndex;
+        });
+      }
+
+      const handleHateClick = () => {
+        const nextIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : groups.length - 1;
+        
+        const currentGroup = document.querySelector(`[data-index="${activeIndex}"]`),
+              nextGroup = document.querySelector(`[data-index="${nextIndex}"]`);
+        
+        currentGroup.dataset.status = "before";
+        
+        nextGroup.dataset.status = "becoming-active-from-after";
+        
+        setTimeout(() => {
+          nextGroup.dataset.status = "active";
+          activeIndex = nextIndex;
+        });
+      }
+
+
+      // Tugmani tanlang
+      const tugma = document.getElementById('love-button');
+
+      function mn() {
+        setTimeout(() => {
+          tugma.click();
+        }, 1000);
+      }
+
+      setInterval(mn, 2500);
+    </script>
+
+    <script>
+      let eventGt1 = document.querySelector(".front-use");
+      let eventGt2 = document.querySelector(".getSysSel-box");
+
+      eventGt1.addEventListener("click", () => {
+          eventGt2.classList.toggle("getSysSelActive");
+      })
+    </script>
+
+    
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $(".subMessHForm").submit(function (event) {
+              // Prevent the default form submission
+              event.preventDefault();
+
+              // Serialize the form data
+              var formData = $(this).serialize();
+
+              // Send the AJAX request
+              $.ajax({
+                  type: "POST",
+                  url: "{% url 'Home' %}",
+                  data: formData,
+                  success: function (response) {
+                      // Handle the success response
+                      $(document).ready(function(){
+                          $(".mainSucBoxNoneActive").removeClass("mainSucBoxNoneActive");
+                      });
+                  },
+                  error: function (error) {
+                      // Handle the error response
+                      console.log("Error submitting form:", error);
+                  }
+              });
+          });
+      });
+  </script>
+</body>
+</html>

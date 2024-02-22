@@ -1,0 +1,67 @@
+<!-- likes.html -->
+{% extends 'Home/base.html' %}
+
+{% block content %}
+
+<style>
+    .liked-blogs {
+            margin: 100px 0 0 0;
+      }
+      .likeCardAddres {
+        text-decoration: none;
+      }
+      .likeCard {
+        width: 320px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .likeCard > img {
+        width: 70%;
+        height: 120px;
+        background-size: cover;
+        border-radius: 10px;
+        /* border: 3px solid var(--blue); */
+      }
+      .likeCard > h3 {
+        width: 80%;
+        padding: 5px 10px;
+        background: var(--border-prussian-blue);
+        text-align: center;
+        border-radius: 10px;
+        /* transform: translateY(-15px); */
+      }
+      .likedBox {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-gap: 20px;
+        place-items: center;
+        margin: 10px 0;
+      }
+</style>
+
+<div class="liked-blogs">
+    <div class="m5-if1-title-box">
+        <span data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="400" style="font-size: 3rem !important; text-align: center;">{% trans 'Blogs I like' %}</span>
+    </div>
+
+    <div class="likedBox">
+        {% for blog in liked_blogs %}
+            <a href="{% url 'blog' blog.id %}" class="likeCardAddres">
+                <div class="likeCard">
+                    <img src="{{ blog.photo.url }}" alt="{{ blog.title }}">
+                    <h3>{{ blog.title|slice:":15" }}{% if blog.title|length > 105 %}...{% endif %}</h3>
+                </div>
+            </a>
+        {% empty %}
+            <p>{% trans 'User do not like never posts' %}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

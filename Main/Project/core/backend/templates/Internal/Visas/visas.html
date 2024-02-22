@@ -1,0 +1,50 @@
+{% extends 'Home/base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/Home/Css/visas.css">
+
+<style>
+    header {
+        background: var(--bg-oxford-blue-2) !important;
+    }
+    .visasAllBox-container {
+        margin: 100px 0 0 0 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .m5-if1-title-box {
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+
+    @media (max-width: 992px) {
+        .g2-f-visas-box {
+            width: 500px;
+            height: 500px;
+        }
+    }
+    @media (max-width: 650px) {
+        .g2-f-visas-box {
+            width: 350px;
+            height: 350px;
+        }
+    }
+</style>
+<div class="visasAllBox-container">
+    <div class="m5-if1-title-box">
+        <span data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="400" style="font-size: 3rem !important;">{% trans 'Visas' %}</span>
+        <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500" style="font-size: 2rem !important;">{% trans 'You can get acquainted with all our visas.' %}</p>
+    </div>
+    <div class="visas-container">
+        {% for visa in visas %}
+        <div class="g2-f-visas-box {{ visa.colors }}">
+            <img src="{{ visa.images.url }}" alt="{{ visa.title }}">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

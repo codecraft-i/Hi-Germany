@@ -1,0 +1,958 @@
+{% extends 'Home/base.html' %}
+
+{% block content %}
+
+  <style>
+    header {
+            background: var(--bg-oxford-blue-2) !important;
+        }
+  </style>
+    
+    <div class="container">
+        <main>
+            <article>
+        
+              <!-- 
+                - #HERO
+              -->
+        
+              <section class="hero" id="home" aria-label="home">
+                <div class="container">
+                  
+                  <div class="firstSectionH">
+                    <div class="mn5-firstB_box">
+                      <div class="mn5firstBLeft">
+                          <h5 data-aos="fade-up" data-aos-easing="linear" data-aos-duration="400">{% trans 'Hey, Welcome to the official website of Hi Germany' %}</h5>
+                          <h3 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="400">{% trans 'With us you are different' %} <br> {% trans 'about' %}<span>{% trans 'Germany' %}</span> <span id="typed-output"></span></h3>
+                          <p data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500" style="color: rgb(255, 209, 148);">
+                              {% trans 'German language and coming to Germany' %} <br> {% trans 'is easy, believe me😉' %}
+                          </p>
+                          <button><a href="#topic-label">{% trans 'Get In Touch' %}</a></button> <!-- data-aos="fade-left" data-aos-easing="linear" data-aos-duration="550" -->
+                          <div class="mn5InSocialMediaBox"> <!-- data-aos="fade-left" data-aos-easing="linear" data-aos-duration="400" -->
+                              <a href="#" style="padding: 7px;"><i style="font-size: 2rem !important;" class='bx bxl-telegram'></i></a>
+                              <a href="#" style="padding: 7px;"><i style="font-size: 2rem !important;" class='bx bxl-instagram-alt' ></i></a>
+                              <a href="#" style="padding: 7px;"><i style="font-size: 2rem !important;" class='bx bxl-facebook-circle' ></i></a>
+                              <a href="#" style="padding: 7px;"><i style="font-size: 2rem !important;" class='bx bxl-youtube' ></i></a>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="hero-banner">
+          
+                      <div class="mn5-SecB_box">
+                        <div class="card-swiper">
+                            <div class="card-groups">
+                            <div class="card-group" data-index="0" data-status="active">
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                            </div>
+                            <div class="card-group" data-index="1" data-status="unknown">
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                            </div>
+                            <div class="card-group" data-index="2" data-status="unknown">
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                                <div class="little-card swiperCard">
+                        
+                                </div>
+                                <div class="big-card swiperCard">
+                        
+                                </div>
+                            </div>
+                            </div>
+                            <div class="card-swiper-buttons">
+                            <button id="hate-button" onclick="handleHateClick()">
+                                <i class='bx bx-chevrons-left' ></i>
+                            </button>
+                            <button id="love-button" onclick="handleLoveClick()">
+                                <i class='bx bx-chevrons-right' ></i>
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+        
+                  </div>
+        
+                  <!-- <img src="./assets/images/shadow-1.svg" width="500" height="800" alt="" class="hero-bg hero-bg-1"> -->
+        
+                  <!-- <img src="./assets/images/shadow-2.svg" width="500" height="500" alt="" class="hero-bg hero-bg-2"> -->
+        
+                </div>
+              </section>
+        
+        
+        
+        
+        
+              <!-- 
+                - #TOPICS
+              -->
+        
+              <section class="topics" id="topics" aria-labelledby="topic-label" style="margin-top: 500px;">
+                <div class="container">
+        
+                  <div class="card topic-card">
+        
+                    <div class="card-content">
+        
+                      <h2 class="headline headline-2 section-title card-title" id="topic-label">
+                        {% trans 'Hot topics' %}
+                      </h2>
+        
+                      <p class="card-text">
+                        {% trans "Don't miss out on the latest news about Travel tips, Hotels review, Food guide..." %}
+                      </p>
+        
+                      <div class="btn-group">
+                        <button class="btn-icon" aria-label="previous" data-slider-prev>
+                          <ion-icon name="arrow-back" aria-hidden="true"></ion-icon>
+                        </button>
+        
+                        <button class="btn-icon" aria-label="next" data-slider-next>
+                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </button>
+                      </div>
+        
+                    </div>
+        
+                    <div class="slider" data-slider>
+                      <ul class="slider-list" data-slider-container>
+        
+                        <li class="slider-item">
+                          <a href="/usefull/2/" class="slider-card">
+        
+                            <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                              <img src="/static/Home/Assets/Images/GermanAssets/g-tick.jpg" width="507" height="618" loading="lazy" alt="Sport"
+                               z class="img-cover">
+                            </figure>
+        
+                            <div class="slider-content">
+                              <span class="slider-title">{% trans 'Buy ticket' %}</span>
+        
+                              <p class="slider-subtitle">#Germany #Usefull</p>
+                            </div>
+        
+                          </a>
+                        </li>
+        
+                        <li class="slider-item">
+                          <a href="/usefull/3/" class="slider-card">
+        
+                            <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                              <img style="height: 100% !important;" src="/static/Home/Assets/Images/GermanAssets/ger-imTh.jpg" width="507" height="618" loading="lazy" alt="Travel"
+                                class="img-cover">
+                            </figure>
+        
+                            <div class="slider-content">
+                              <span class="slider-title">{% trans 'Travel' %}</span>
+        
+                              <p class="slider-subtitle">#Berlin #Bielefeld ...</p>
+                            </div>
+        
+                          </a>
+                        </li>
+        
+                        <li class="slider-item">
+                          <a href="/usefull/4/" class="slider-card">
+        
+                            <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                              <img src="/static/Home/Assets/Images/GermanAssets/German-Universities.jpg" width="507" height="618" loading="lazy" alt="Design"
+                                class="img-cover">
+                            </figure>
+        
+                            <div class="slider-content">
+                              <span class="slider-title">{% trans 'University' %}</span>
+        
+                              <p class="slider-subtitle">#Munich #Hamburg ...</p>
+                            </div>
+        
+                          </a>
+                        </li>
+        
+                        <li class="slider-item">
+                          <a href="/usefull/5/" class="slider-card">
+        
+                            <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                              <img src="/static/Home/Assets/Images/GermanAssets/foods.jpg" width="507" height="618" loading="lazy" alt="Movie"
+                                class="img-cover">
+                            </figure>
+        
+                            <div class="slider-content">
+                              <span class="slider-title">{% trans 'Foods' %}</span>
+        
+                              <p class="slider-subtitle">#Brot & Brötchen #Käsespätzle ...</p>
+                            </div>
+        
+                          </a>
+                        </li>
+        
+                        <li class="slider-item">
+                          <a href="/usefull/6/" class="slider-card">
+        
+                            <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                              <img src="/static/Home/Assets/Images/GermanAssets/medical-help.jpg" width="507" height="618" loading="lazy" alt="Lifestyle"
+                                class="img-cover">
+                            </figure>
+        
+                            <div class="slider-content">
+                              <span class="slider-title">{% trans 'Health' %}</span>
+        
+                              <p class="slider-subtitle">#Helios #Meoclinic ...</p>
+                            </div>
+        
+                          </a>
+                        </li>
+        
+                      </ul>
+                    </div>
+        
+                  </div>
+        
+                </div>
+              </section>
+        
+        
+        
+        
+        
+              <!-- 
+                - #FEATURED POST
+              -->
+        
+              <section class="section feature" aria-label="feature" id="featured">
+                <div class="container">
+        
+                  <h2 class="headline headline-2 section-title">
+                    <span class="span">Editor's picked</span>
+                  </h2>
+        
+                  <p class="section-text">
+                    Featured and highly rated articles
+                  </p>
+        
+                  <ul class="feature-list">
+        
+                    <li>
+                      <div class="card feature-card">
+        
+                        <figure class="card-banner img-holder" style="--width: 1602; --height: 903;">
+                          <img src="/static/Home/Assets/Images/GermanAssets/u1.jpg" width="1602" height="903" loading="lazy"
+                            alt="Self-observation is the first step of inner unfolding" class="img-cover">
+                        </figure>
+        
+                        <div class="card-content">
+        
+                          <div class="card-wrapper">
+                            <div class="card-tag">
+                              <a href="#" class="span hover-2">{% trans '#University' %}</a>
+        
+                              <a href="#" class="span hover-2">{% trans '#Study' %}</a>
+                            </div>
+        
+                            <div class="wrapper">
+                              <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        
+                              <span class="span spanData"></span>
+                            </div>
+                          </div>
+        
+                          <h3 class="headline headline-3">
+                            <a href="/blog/1/" class="card-title hover-2">
+                              {% trans 'About German education and studying in Germany' %}
+                            </a>
+                          </h3>
+        
+                          <div class="card-wrapper">
+        
+                            <div class="profile-card">
+                              <img src="/static/Home/Assets/Images/images/khurshid.jpg" width="48" height="48" loading="lazy" alt="Joseph"
+                                class="profile-banner">
+        
+                              <div>
+                                <p class="card-title">Khurshid</p>
+        
+                                <p class="card-subtitle">Mirzakhidovich</p>
+                              </div>
+                            </div>
+        
+                            <a href="/blog/1/" class="card-btn">{% trans 'Read more' %}</a>
+        
+                          </div>
+        
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                    <li>
+                      <div class="card feature-card">
+        
+                        <figure class="card-banner img-holder" style="--width: 1602; --height: 903;">
+                          <img src="/static/Home/Assets/Images/GermanAssets/w1.jpg" width="1602" height="903" loading="lazy"
+                            alt="Self-observation is the first step of inner unfolding" class="img-cover">
+                        </figure>
+        
+                        <div class="card-content">
+        
+                          <div class="card-wrapper">
+                            <div class="card-tag">
+                              <a href="#" class="span hover-2">{% trans '#Work' %}</a>
+        
+                              <a href="#" class="span hover-2">{% trans '#Profession' %}</a>
+                            </div>
+        
+                            <div class="wrapper">
+                              <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        
+                              <span class="spanData"></span>
+                            </div>
+                          </div>
+        
+                          <h3 class="headline headline-3">
+                            <a href="/blog/2/" class="card-title hover-2">
+                              {% trans 'About going to work in Germany and different types of jobs.' %}
+                            </a>
+                          </h3>
+        
+                          <div class="card-wrapper">
+        
+                            <div class="profile-card">
+                              <img src="/static/Home/Assets/Images/images/khurshid.jpg" width="48" height="48" loading="lazy" alt="Joseph"
+                                class="profile-banner">
+        
+                              <div>
+                                <p class="card-title">Khurshid</p>
+        
+                                <p class="card-subtitle">Mirzakhidovich</p>
+                              </div>
+                            </div>
+        
+                            <a href="/blog/2/" class="card-btn">{% trans 'Read more' %}</a>
+        
+                          </div>
+        
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                    <li>
+                      <div class="card feature-card">
+        
+                        <figure class="card-banner img-holder" style="--width: 1602; --height: 903;">
+                          <img src="/static/Home/Assets/Images/GermanAssets/travel1.jpg" width="1602" height="903" loading="lazy"
+                            alt="Self-observation is the first step of inner unfolding" class="img-cover">
+                        </figure>
+        
+                        <div class="card-content">
+        
+                          <div class="card-wrapper">
+                            <div class="card-tag">
+                              <a href="#" class="span hover-2">{% trans '#Travel' %}</a>
+        
+                              <a href="#" class="span hover-2">{% trans '#Trip' %}</a>
+                            </div>
+        
+                            <div class="wrapper">
+                              <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        
+                              <span class="spanData"></span>
+                            </div>
+                          </div>
+        
+                          <h3 class="headline headline-3">
+                            <a href="/blog/3/" class="card-title hover-2">
+                              {% trans 'About a trip to Germany' %}
+                            </a>
+                          </h3>
+        
+                          <div class="card-wrapper">
+        
+                            <div class="profile-card">
+                              <img src="/static/Home/Assets/Images/images/khurshid.jpg" width="48" height="48" loading="lazy" alt="Joseph"
+                                class="profile-banner">
+        
+                              <div>
+                                <p class="card-title">Khurshid</p>
+        
+                                <p class="card-subtitle">Mirzakhidovich</p>
+                              </div>
+                            </div>
+        
+                            <a href="/blog/3/" class="card-btn">{% trans 'Read more' %}</a>
+        
+                          </div>
+        
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                    <li>
+                      <div class="card feature-card">
+        
+                        <figure class="card-banner img-holder" style="--width: 1602; --height: 903;">
+                          <img src="/static/Home/Assets/Images/GermanAssets/pPlaces.jpg" width="1602" height="903" loading="lazy"
+                            alt="Self-observation is the first step of inner unfolding" class="img-cover">
+                        </figure>
+        
+                        <div class="card-content">
+        
+                          <div class="card-wrapper">
+                            <div class="card-tag">
+                              <a href="#" class="span hover-2">#Famous</a>
+        
+                              <a href="#" class="span hover-2">#Places</a>
+                            </div>
+        
+                            <div class="wrapper">
+                              <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        
+                              <span class="spanData">6 mins read</span>
+                            </div>
+                          </div>
+        
+                          <h3 class="headline headline-3">
+                            <a href="/blog/4/" class="card-title hover-2">
+                              {% trans 'About famous places in Germany' %}
+                            </a>
+                          </h3>
+        
+                          <div class="card-wrapper">
+        
+                            <div class="profile-card">
+                              <img src="/static/Home/Assets/Images/images/khurshid.jpg" width="48" height="48" loading="lazy" alt="Joseph"
+                                class="profile-banner">
+        
+                              <div>
+                                <p class="card-title">Khurshid</p>
+        
+                                <p class="card-subtitle">Mirzakhidovich</p>
+                              </div>
+                            </div>
+        
+                            <a href="/blog/4/" class="card-btn">{% trans 'Read more' %}</a>
+        
+                          </div>
+        
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                    <li>
+                      <div class="card feature-card">
+        
+                        <figure class="card-banner img-holder" style="--width: 1602; --height: 903;">
+                          <img src="/static/Home/Assets/Images/GermanAssets/embassyGerman.jpg" width="1602" height="903" loading="lazy"
+                            alt="Self-observation is the first step of inner unfolding" class="img-cover">
+                        </figure>
+        
+                        <div class="card-content">
+        
+                          <div class="card-wrapper">
+                            <div class="card-tag">
+                              <a href="#" class="span hover-2">#Embassy</a>
+        
+                              <a href="#" class="span hover-2">#Help</a>
+                            </div>
+        
+                            <div class="wrapper">
+                              <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        
+                              <span class="spanData"></span>
+                            </div>
+                          </div>
+        
+                          <h3 class="headline headline-3">
+                            <a href="/blog/5/" class="card-title hover-2">
+                              {% trans 'Germany Uzbekistan embassies and Asking for help' %}
+                            </a>
+                          </h3>
+        
+                          <div class="card-wrapper">
+        
+                            <div class="profile-card">
+                              <img src="/static/Home/Assets/Images/images/khurshid.jpg" width="48" height="48" loading="lazy" alt="Joseph"
+                                class="profile-banner">
+        
+                              <div>
+                                <p class="card-title">Khurshid</p>
+        
+                                <p class="card-subtitle">Mirzakhidovich</p>
+                              </div>
+                            </div>
+        
+                            <a href="/blog/5/" class="card-btn">{% trans 'Read more' %}</a>
+        
+                          </div>
+        
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                  </ul>
+        
+                  <a href="/blogs/" class="btn btn-secondary">
+                    <span class="span">{% trans 'Show More Posts' %}</span>
+        
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </a>
+        
+                </div>
+        
+                <!-- <img src="./assets/images/shadow-3.svg" width="500" height="1500" loading="lazy" alt="" class="feature-bg"> -->
+        
+              </section>
+        
+        
+        
+        
+        
+              <!-- 
+                - #POPULAR TAGS
+              -->
+        
+              <section class="tags" aria-labelledby="tag-label">
+                <div class="container">
+        
+                  <h2 class="headline headline-2 section-title" id="tag-label">
+                    <span class="span">{% trans 'Popular Tags' %}</span>
+                  </h2>
+        
+                  <p class="section-text">
+                    {% trans 'Most searched keywords' %}
+                  </p>
+        
+                  <ul class="grid-list">
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag1.png" width="32" height="32" loading="lazy" alt="Travel">
+        
+                        <p class="btn-text">{% trans 'Travel' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag2.png" width="32" height="32" loading="lazy" alt="Culture">
+        
+                        <p class="btn-text">{% trans 'Culture' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag3.png" width="32" height="32" loading="lazy" alt="Lifestyle">
+        
+                        <p class="btn-text">{% trans 'Lifestyle' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag4.png" width="32" height="32" loading="lazy" alt="Fashion">
+        
+                        <p class="btn-text">{% trans 'Fashion' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag5.png" width="32" height="32" loading="lazy" alt="Food">
+        
+                        <p class="btn-text">{% trans 'Foods' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag6.png" width="32" height="32" loading="lazy" alt="Space">
+        
+                        <p class="btn-text">{% trans 'Cities' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/worksTopic.png" width="32" height="32" loading="lazy" alt="Animal">
+        
+                        <p class="btn-text">{% trans 'Works' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag8.png" width="32" height="32" loading="lazy" alt="Minimal">
+        
+                        <p class="btn-text">{% trans 'Minimal' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag9.png" width="32" height="32" loading="lazy" alt="Interior">
+        
+                        <p class="btn-text">{% trans 'Interior' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag10.png" width="32" height="32" loading="lazy" alt="Plant">
+        
+                        <p class="btn-text">{% trans 'Plant' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag11.png" width="32" height="32" loading="lazy" alt="Nature">
+        
+                        <p class="btn-text">{% trans 'Nature' %}</p>
+                      </button>
+                    </li>
+        
+                    <li>
+                      <button class="card tag-btn">
+                        <img src="/static/Home/Assets/ProImages/images/tag12.png" width="32" height="32" loading="lazy" alt="Business">
+        
+                        <p class="btn-text">{% trans 'Business' %}</p>
+                      </button>
+                    </li>
+        
+                  </ul>
+        
+                </div>
+              </section>
+        
+        
+        
+        
+        
+              <!-- 
+                - #RECENT POST
+              -->
+        
+              <section class="section recent-post" id="recent" aria-labelledby="recent-label">
+                <div class="container">
+        
+                  <div class="post-main">
+        
+                    <h2 class="headline headline-2 section-title">
+                      <span class="span">{% trans 'Recent posts' %}</span>
+                    </h2>
+        
+                    <p class="section-text">
+                      {% trans "Don't miss the latest trends" %}
+                    </p>
+        
+                    <ul class="grid-list">
+
+                      {% for post in random_usefulldata %}
+
+                        <li>
+                          <div class="recent-post-card">
+          
+                            <figure class="card-banner img-holder" style="--width: 271; --height: 258;">
+                              <img src="{{ post.photo.url }}" width="271" height="258" loading="lazy"
+                                alt="{{ post.title }}" class="img-cover">
+                            </figure>
+          
+                            <div class="card-content">
+          
+                              <a href="{% url 'usefull' post.id %}" class="card-badge">{% trans 'Germany Tips' %}</a>
+          
+                              <h3 class="headline headline-3 card-title">
+                                <a href="{% url 'usefull' post.id %}" class="link hover-2">{{ post.title }}</a>
+                              </h3>
+          
+                              <p class="card-text">
+                                {{ post.description_f_body|truncatechars:120 }}{% if post.description_f_body|length > 120 %}...{% endif %}
+                              </p>
+          
+                              <div class="card-wrapper">
+                                <div class="card-tag">
+                                  <a href="javascript:void(0)" class="span hover-2">#{{ post.tags }}</a>
+                                </div>
+          
+                                <div class="wrapper">
+                                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          
+                                  <span class="span">{{ post.created_at.date }}</span>
+                                </div>
+                              </div>
+          
+                            </div>
+          
+                          </div>
+
+                        </li>
+
+
+                      {% endfor %}
+        
+                    </ul>
+        
+                    <nav aria-label="pagination" class="pagination">
+        
+                      <a href="/usefulls/" class="pagination-btn" aria-label="previous page">
+                        <ion-icon name="arrow-back" aria-hidden="true"></ion-icon>
+                      </a>
+        
+                      <a href="/usefulls/" class="pagination-btn">1</a>
+                      <a href="/usefulls/" class="pagination-btn">2</a>
+                      <a href="/usefulls/" class="pagination-btn">3</a>
+                      <a href="/usefulls/" class="pagination-btn" aria-label="more page">...</a>
+        
+                      <a href="/usefulls/" class="pagination-btn" aria-label="next page">
+                        <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                      </a>
+        
+                    </nav>
+        
+                  </div>
+        
+                  <div class="post-aside grid-list">
+        
+                    <div class="card aside-card">
+        
+                      <h3 class="headline headline-2 aside-title">
+                        <span class="span">{% trans 'Popular Posts' %}</span>
+                      </h3>
+        
+                      <ul class="popular-list">
+                        {% if latest_useful_data %}
+                          {% for entry in latest_useful_data %}
+                            <li>
+                              <div class="popular-card">
+            
+                                <figure class="card-banner img-holder" style="--width: 64; --height: 64;">
+                                  <img src="{{ entry.photo.url }}" width="64" height="64" loading="lazy"
+                                    alt="Creating is a privilege but it’s also a gift" class="img-cover">
+                                </figure>
+            
+                                <div class="card-content">
+            
+                                  <h4 class="headline headline-4 card-title">
+                                    <a href="#" class="link hover-2">{{ entry.title }}</a>
+                                  </h4>
+            
+                                  <div class="warpper">
+                                    <!-- <p class="card-subtitle">{{ entry.updated.date }}</p> -->
+            
+                                    <time class="publish-date" datetime="2022-04-15">{{ entry.created_at.date }}</time>
+                                  </div>
+            
+                                </div>
+            
+                              </div>
+                            </li>
+
+                          {% endfor %}  
+                        {% else %}
+                            <p>No useful data entries available.</p>
+                        {% endif %}
+        
+                      </ul>
+        
+                    </div>
+        
+                    <div class="card aside-card">
+        
+                      <h3 class="headline headline-2 aside-title">
+                        <span class="span">{% trans 'Last Comment' %}</span>
+                      </h3>
+        
+                      <ul class="comment-list">
+                        {% for message in selected_messages %}
+                          <li>
+                            <div class="comment-card">
+          
+                              <blockquote class="card-text">
+                                “ {{ message.body|truncatechars:150 }}{% if message.body|length > 150 %}...{% endif %} “
+                              </blockquote>
+          
+                              <div class="profile-card">
+                                <figure class="profile-banner img-holder">
+                                  <img src="/static/Home/Assets/Images/GermanAssets/defaultUserPhoto.png" width="32" height="32" loading="lazy" alt="Jane Cooper">
+                                </figure>
+          
+                                <div>
+                                  <p class="card-title">{{ message.user.username }}</p>
+          
+                                  <time class="card-date" datetime="2022-04-15">{{ message.created_at.date }}</time>
+                                </div>
+                              </div>
+          
+                            </div>
+                          </li>
+                        {% endfor %}
+                      </ul>
+        
+                    </div>
+        
+                    <div class="card aside-card insta-card">
+        
+                      <a href="#" class="logo">
+                        <div class="logo-box logoS2">
+                          <a href="/" id="logo-text">
+                              <span>Hi</span>
+                              <span>Germany</span>
+                          </a>
+                        </div>
+                      </a>
+        
+                      <p class="card-text" style="margin-bottom: 5px !important;">
+                        {% trans 'Follow us on Social Media' %}
+                      </p>
+                      <span style="font-size: 1.35rem; margin-bottom: 10px;">{% trans 'Usefull Posts us on Social Media' %}</span>
+        
+                      <ul class="insta-list">
+
+                        {% for popularPost in popularPosts %}
+                          <li>
+                            <a href="{{ popularPost.address }}" target="_blank" class="insta-post img-holder" style="--width: 276; --height: 277;">
+                              <img src="{{ popularPost.images.url }}" width="276" height="277" loading="lazy" alt="insta post"
+                                class="img-cover">
+                            </a>
+                          </li>
+                        {% endfor %}
+        
+                      </ul>
+        
+                    </div>
+        
+                  </div>
+        
+                </div>
+                <div id="sendMessageBoxL"></div>
+              </section>
+
+              <section style="margin: 0 0 10px 0; padding: 10px 0;">
+                <div class="content">
+                  <div class="left-side">
+                    <div class="address details">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <div class="topic">{% trans 'Address' %}</div>
+                      <div class="text-one">Germany</div>
+                      <div class="text-two">Berlin</div>
+                    </div>
+                    <div class="phone details">
+                      <i class="fas fa-phone-alt"></i>
+                      <div class="topic">{% trans 'Phone' %}</div>
+                      <div class="text-one">+998 88 689 22 42</div>
+                      <div class="text-two"></div>
+                    </div>
+                    <div class="email details">
+                      <i class="fas fa-envelope"></i>
+                      <div class="topic">{% trans 'Email and Telegram Bot' %}</div>
+                      <div class="text-one">t.me/Kontaktadminbot</div>
+                      <div class="text-two"></div>
+                    </div>
+                </div>
+                  <div class="right-side">
+                    <div class="topic-text">{% trans 'Send us a message' %}</div>
+                    <p>{% trans "If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you." %}</p>
+                  <form method="post" id="sendMessages" class="subMessHForm" action="{% url 'Home' %}">
+                    {% csrf_token %}
+                    <div class="input-box">
+                      <input type="text" name="name" placeholder="Enter your name">
+                    </div>
+                    <div class="input-box">
+                      <input type="text" name="body" placeholder="Enter your email">
+                    </div>
+                    <div class="input-box message-box">
+                      
+                    </div>
+                    <div class="button" id="submitBtnMessages">
+                      <!-- <input type="button" value="Send Now" > -->
+                      <button style="background: var(--blue); color: #fff; padding: 8px 15px; border-radius: 10px; margin: 0 0 10px 0;" type="submit">{% trans 'Send Now' %}</button>
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </section>
+        
+            </article>
+          </main>
+    </div>
+
+    <script>
+      // let spanData = document.querySelector('.spanData');
+
+      let date = new Date();
+      let nowYear = date.getFullYear();
+
+      document.addEventListener("DOMContentLoaded", function() {
+          var spans = document.querySelectorAll('.spanData');
+          spans.forEach(function(span) {
+              span.innerHTML = `${ nowYear - 2023 } years ago`;
+          });
+      });
+    </script>
+        
+{% endblock %}
